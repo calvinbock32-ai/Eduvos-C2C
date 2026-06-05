@@ -3,6 +3,7 @@
  * index.php - Main entry point for the Eduvos C2C Marketplace.
  * Handles user authentication (login, registration, logout) and 
  * displays the marketplace item feed with filtering capabilities.
+ * Also a note, I am using inline CSS/Scripts where is makes sense and then reserving the external CSS for the site as a whole.
  */
 
 session_start();
@@ -356,6 +357,7 @@ $available_categories = $categories_stmt->fetchAll(PDO::FETCH_COLUMN);
 </main>
 
 <footer>
+    <?php // Note: I am just using a mock footer here. The links do not work but aims to show a prototype of this ?>
     <p>&copy; <?php echo date('Y'); ?> MzansiBuys Marketplace. All simulation rights reserved.</p>
     <p>
         <a href="index.php#terms">Terms &amp; Conditions</a> | 
@@ -368,6 +370,7 @@ $available_categories = $categories_stmt->fetchAll(PDO::FETCH_COLUMN);
 /**
  * Dual Range Slider Logic
  */
+// I wish I used drop downs, but this works so leaving it as is, No time to change this now, but this does mess with my CSS a bit.
 const minRange = document.getElementById('min_range');
 const maxRange = document.getElementById('max_range');
 const minValDisplay = document.getElementById('min_val');
@@ -379,7 +382,7 @@ function updateSlider() {
     let minVal = parseInt(minRange.value);
     let maxVal = parseInt(maxRange.value);
 
-    // Prevent handles from crossing
+    // Prevent handles from crossing 
     if (minVal > maxVal) {
         let temp = minVal;
         minVal = maxVal;
@@ -414,6 +417,7 @@ maxRange.addEventListener('input', () => {
 window.addEventListener('DOMContentLoaded', updateSlider);
 
 // Live Search Logic
+// Also, have a bug where searching "cat" will find the word "category" and show all items but I cannot fix this so leaving as is. (all else works so it will do for prototype)
 const searchInput = document.getElementById('live_search');
 if (searchInput) {
     searchInput.addEventListener('keyup', function() {

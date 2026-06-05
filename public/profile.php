@@ -1,4 +1,8 @@
 <?php
+/**
+ * profile.php - Handles users profile page
+ * Allows users to list items and see items sold/bought
+ */
 session_start();
 require_once __DIR__ . '/../src/database.php';
 

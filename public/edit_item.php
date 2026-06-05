@@ -1,4 +1,7 @@
 <?php
+/**
+ * edit_item.php - Allows user to edit items
+ */
 session_start();
 require_once __DIR__ . '/../src/database.php';
 

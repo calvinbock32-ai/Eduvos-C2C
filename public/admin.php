@@ -1,4 +1,7 @@
 <?php
+/**
+ * admin.php - Handles site admin controls
+ */
 session_start();
 require_once __DIR__ . '/../src/database.php';
 
