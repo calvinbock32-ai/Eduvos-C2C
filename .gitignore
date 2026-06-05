@@ -1,0 +1,6 @@
+# Local databases
+/data/*.db
+
+# User uploaded files
+/public/uploads/*
+!/public/uploads/.gitkeep
